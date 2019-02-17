@@ -1,0 +1,10 @@
+Install vagrant
+Try simple Vagrant Hashicorp Boxes
+Create Vagrantfile
+Create Boxes from Vagrantfile
+Docker Hello World
+Try simple docker container
+Create Dockerfile
+Inspect Container
+Try Python App
+Use of Basics Command

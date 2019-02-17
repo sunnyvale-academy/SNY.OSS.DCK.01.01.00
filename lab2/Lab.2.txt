@@ -1,0 +1,4 @@
+Create New app in nodejs
+Make an update into container -> container commit -> create container from new images
+Make an update in source code -> create new images -> create container from new images
+Create web app in any programming lenguages
