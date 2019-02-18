@@ -11,7 +11,7 @@ cd vagrant-quickstart
 vagrant init
 ```
 >Vagrantfile is added in folder -> Analyze Vagrantgile
-> [Vagrant boxes repository] (https://app.vagrantup.com/boxes/search)
+[Vagrant boxes repository] (https://app.vagrantup.com/boxes/search)
 
 ```
 rm Vagrantfile
@@ -59,4 +59,25 @@ which git
 
 ###### PROVISIONING WITH VAGRANT
 
+> git clone Lab1
 
+```
+cd prov_example
+vagrant up
+vagrant ssh
+apache2 -v
+curl -i http://127.0.0.1:80
+```
+
+###### DOCKER: OVERVIEW AND 'HELLO WORLD'
+
+>check for docker installation by vagrant provisioning_apache2, add docker user
+
+```
+docker
+sudo adduser docker_user
+sudo usermod -aG docker docker_user
+su docker_user
+sudo systemctl start docker 
+docker run hello-world
+```
