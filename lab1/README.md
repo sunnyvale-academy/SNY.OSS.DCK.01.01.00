@@ -80,4 +80,10 @@ sudo usermod -aG docker docker_user
 su docker_user
 sudo systemctl start docker 
 docker run hello-world
+docker image ls
+docker ps
+docker ps -a
+docker container ls
+docker container ls -a
+docker container inspect {ID}
 ```
