@@ -17,14 +17,25 @@ $ cd /vagrant
 $ sudo adduser docker_lab2
 $ sudo usermode -aG docker docker_lab2
 ```
+>Create python app
+
+```
+$ mkdir py_app
+$ cd py_app
+$ touch Dockerfile
+$ touch requirements.txt
+$ touch app.py
+$ copy and paste code inside file
+```
 
 > Build app and creates Docker image
 
 ```
-$ docker build -t nameimage:1.0 .
+$ docker build -t nameimage .
 $ docker image ls
+# note there are two images, our "nameimage" and python, and note the tag:latest (default)
 $ docker ps
-$ docker ps -aG
+$ docker ps -a
 ```
 
 > Run the app
@@ -59,7 +70,7 @@ $ cp ../lab2/Vagrantfile .
 $ vi Vagrantfile # change config.vm.box ="ubuntu/xenial64" to config.vm.box ="centos/7" and IP and vm name
 $ vagrant up
 ```
-###### install Docker on Centos7
+> Install Docker on Centos7
 
 #Install needed packages:
 
@@ -81,12 +92,12 @@ Finally, start the Docker service:
 
 `$ sudo systemctl start docker.service`
 
-###### run our App from Docker Hub
+###### run our App, that was downloaded from Docker Hub
 
-```
-$docker run -p 4000:80 michis/get_started:part1
-vagrant 
-```
+`$docker run -p 4000:80 michis/get_started:part1 `
+
+Destroy VM
+
 
 
 

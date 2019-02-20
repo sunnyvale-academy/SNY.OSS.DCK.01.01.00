@@ -12,19 +12,17 @@
 #  with access, by name, to other vms
 Vagrant.configure(2) do |config|
   config.hostmanager.enabled = true
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "centos/7"
   config.hostmanager.manage_host = true
-  config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
-  config.vm.define "lab04" do |h|
+  config.vm.define "lab02centos7" do |h|
     h.vm.provider :virtualbox do |vb|
-    #    vb.name = "lab04"
+    #    vb.name = "docker012"
 		vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-		#vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
     end
-    h.vm.network "private_network", ip: "192.168.135.135"
-    h.vm.provision "shell", path: "scripts/install_docker_nodejs.sh"
-    h.vm.hostname = "lab04"
+    h.vm.network "private_network", ip: "192.168.135.132"
+    #h.vm.provision "shell", path: "scripts/install_docker.sh"
+    h.vm.hostname = "lab02centos7"
   end
 
 end
