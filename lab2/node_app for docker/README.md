@@ -5,77 +5,50 @@
 
 `$ git clone https://github.com/sunnyvale-academy/SNY.OSS.DCK.01.01.00.git`
 
+
+```
+$ mkdir lab2node
+$ cd lab2node
+# Copy scripts folder and Vagrantfile from downloaded lab2 folder
+$ vagrant up
+```
 ###### CREATE NODE APP FOR DOCKER
 
 >Create folder Nodeapp
-`$ touch package.json`
 
-Paste content in file
-{
-  "name": "docker_web_app",
-  "version": "1.0.0",
-  "description": "Node.js on Docker",
-  "author": "First Last <first.last@example.com>",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.16.1"
-  }
-}
+```
+$ cd /vagrant
+$ mkdir nodeapp
+$ cd nodeapp
+$ touch package.json
+```
+Paste code from downloaded file
 
 >Run npm install
-`$ npm install`
+
+```
+$ npm config set bin-links false
+$ npm install
+```
 
 >Create server.js file that defines a web app using the Express.js framework:
-Paste content in file
 
-'use strict';
+`$ touch server.js`
 
-const express = require('express');
-
-// Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
-
-// App
-const app = express();
-app.get('/', (req, res) => {
-  res.send('Hello world\n');
-});
-
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+Paste code from downloaded file
 
 ###### CREATE DOCKERFILE
 
 `$ touch Dockerfile`
 
-FROM node:8
-
-'# Create app directory
-WORKDIR /usr/src/app
-
-'# Install app dependencies
-'# A wildcard is used to ensure both package.json AND package-lock.json are copied
-'# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-'# If you are building your code for production
-'# RUN npm ci --only=production
-
-'# Bundle app source
-COPY . .
-
-EXPOSE 8080
-CMD [ "npm", "start" ]
+Paste code from downloaded file
 
 > Build Image
-`$ docker build -t username/nodeapp .`
+
+`$ docker build -t username/nodeapp:1.0 .`
 
 > Check image are correctly build and saved and run it
+
 ```
 $ docker image ls
 $ docker run -d -p 49160:8080 username/nodeapp
@@ -89,11 +62,27 @@ $ docker logs <container id>
 ```
 
 > Go inside the container you can use
+
 `$ docker exec -it <container id> /bin/bash`
 
 > Test
+
 `$ curl -i localhost:49160`
 
 >Stop container
+
 `$ docker container stop`
 
+>Make a change adding a new route (paste code from new_route.txt) to server.js file
+
+> Build New Image of app
+
+`$ docker build -t username/nodeapp:1.1 .`
+
+> Check image are correctly build and saved and run it, then check if the new route work
+
+```
+$ docker image ls
+$ docker run -d -p 49160:8080 username/nodeapp:1.1
+# browse IP:49160/foo
+```

@@ -1,0 +1,4 @@
+app.get('/foo', (req, res) => {
+  var someHTML = "<a href=\"foo\">bar</a>"
+  res.send(someHTML);
+});

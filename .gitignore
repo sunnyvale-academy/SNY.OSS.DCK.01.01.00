@@ -3,5 +3,5 @@ lab2/.vagrant
 lab2/vm_centos7/.vagrant
 lab2/node_app for docker/node_modules
 lab3/hello-world/node_modules
-
-
+lab4/.vagrant
+lab4/app/node_modules
