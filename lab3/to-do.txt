@@ -1,2 +1,0 @@
-rename app from hello world
-add external mount
