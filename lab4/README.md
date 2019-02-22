@@ -43,13 +43,16 @@ Sign out as the postgres Linux user:
 
 Copy the data dump to your home directory:
 
-`sudo cp /var/lib/postgresql/backup.sql . `
+```
+$ cd /vagrant
+$ sudo cp /var/lib/postgresql/backup.sql . 
+```
 
 Since you will be connecting to this database from a container (which will have an IP address other than locahost), you will need to edit the PostgreSQL config file to allow connections from remote addresses. 
 
-> Open /etc/postgresql/9.5/main/postgresql.conf in a text editor. 
+`sudo vi /etc/postgresql/9.5/main/postgresql.conf`
 
-Uncomment the listen_addresses line and set it to ‘*’:
+and uncomment the listen_addresses line and set it to ‘*’:
 
 Enable and start the postgresql service:
 
@@ -64,24 +67,7 @@ Navigate to the home directory and create a directory:
 
 `$ mkdir app && cd app`
 
-Using a text editor, create app.js and add the following content:
-
-const { Client } = require('pg')
-
-const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'nodejs',
-  password: 'newpassword',
-  port: 5432
-})
-
-client.connect()
-
-client.query('SELECT * FROM hello', (err, res) => {
-  console.log(res.rows[0].message)
-  client.end()
-})
+Using a text editor, create app.js and add the code
 
 
 This app uses the pg NPM module (node-postgres) to connect to the database created in the previous section. 
@@ -113,27 +99,12 @@ Return to your home directory and create a Dockerfile to run the Node.js app:
 
 `$ touch Dockerfile`
 
-and paste this code:
-
-FROM debian
-
-RUN apt update -y && apt install -y gnupg curl
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt install -y nodejs
-COPY app/ /home/
-
-ENTRYPOINT tail -F /dev/null
-
+and paste the code
 
 The image built from this Dockerfile will copy the app/ directory to the new image. 
+
 >Edit app.js to allow the app to connect to the database host instead of localhost:
 
-const client = new Client({
-  user: 'postgres',
-  host: 'database',
-  database: 'nodejs',
-  password: 'newpassword',
-  port: 5432
-})
 
 >Build an image from the Dockerfile:
 
@@ -162,9 +133,9 @@ The internal IP address of the Docker host (your Linode) is 172.17.0.1.
 
 >Allow PostgreSQL to accept connections from the Docker interface. 
 
-Open /etc/postgresql/9.5/main/pg_hba.conf in a text editor and add the following line:
+`$ sudo vi /etc/postgresql/9.5/main/pg_hba.conf`
 
-`$ vi /etc/postgresql/9.5/main/pg_hba.conf`
+and add the following line:
 
 host    all             postgres        172.17.0.0/16           password
 
