@@ -6,13 +6,22 @@
 `$ git clone https://github.com/sunnyvale-academy/SNY.OSS.DCK.01.01.00.git`
 
 
+
 ```
+$ cd /vagrant
 $ mkdir lab2node
 $ cd lab2node
 # Copy scripts folder and Vagrantfile from downloaded lab2 folder
 $ vagrant up
 ```
 ###### CREATE NODE APP FOR DOCKER
+
+
+Check if docker and nodejs are correctly installed
+```
+$ which node
+$ which docker
+```
 
 >Create folder Nodeapp
 
@@ -30,6 +39,7 @@ Paste code from downloaded file
 $ npm config set bin-links false
 $ npm install
 ```
+if npm install fails, uncomment the configuration row in vagrantfile
 
 >Create server.js file that defines a web app using the Express.js framework:
 
@@ -71,7 +81,7 @@ $ docker logs <container id>
 
 >Stop container
 
-`$ docker container stop`
+`$ docker container stop {idcontainer}`
 
 >Make a change adding a new route (paste code from new_route.txt) to server.js file
 

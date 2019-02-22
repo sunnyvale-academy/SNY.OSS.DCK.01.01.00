@@ -30,8 +30,6 @@ service docker restart
 
 sudo apt update && sudo apt upgrade
 
-sudo apt install -y postgresql postgresql-contrib
-
 sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 
-sudo apt-get install nodejs
+sudo apt-get install -y nodejs
