@@ -1,5 +1,3 @@
-sudo apt-get remove docker docker-engine docker.io containerd runc
-
 sudo apt-get update
 
 sudo apt-get install -y \
@@ -27,3 +25,11 @@ sudo chmod 777 /etc/default/docker
 sudo update-rc.d docker defaults
 
 service docker restart
+
+sudo apt update && sudo apt upgrade
+
+sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+sudo apt-get install -y nodejs
+
+sudo apt install -y postgresql postgresql-contrib
