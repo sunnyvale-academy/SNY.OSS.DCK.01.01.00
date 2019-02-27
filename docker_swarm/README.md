@@ -82,7 +82,7 @@ $ docker-machine ssh myvm2 "docker swarm join \
 
 Run docker node ls on the manager to view the nodes in this swarm:
 
-`$ docker node ls`
+`$ docker-machine ssh myvm1 "docker node ls"`
 
 >Configure a docker-machine shell to the swarm manager
 
@@ -108,6 +108,8 @@ Now that you have myvm1, you can use its powers as a swarm manager to deploy you
 You are connected to myvm1 by means of the docker-machine shell configuration, and you still have access to the files on your local host. Make sure you are in the same directory as before, which includes the docker-compose.yml file you created.
 
 Just like before, run the following command to deploy the app on myvm1.
+
+NB. First of all be sure that the img in docker-compose.yml are be build
 
 `$ docker stack deploy -c docker-compose.yml getstartedlab`
 
