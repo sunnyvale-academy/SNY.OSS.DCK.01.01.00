@@ -16,6 +16,15 @@ $ touch app.py
 $ touch requirements.txt
 
 ```
+>Install docker-compose
+
+```
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
+$ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+$ docker-compose --version
+```
+
 >Paste code into app.py
 
 Nb. In this example, redis is the hostname of the redis container on the application’s network. We use the default port for Redis, 6379.
@@ -35,15 +44,6 @@ This tells Docker to:
 -Set the default command for the container to python app.py
 
 >Create docker-compose.yml
-
-version: '3'
-services:
-  web:
-    build: .
-    ports:
-     - "5000:5000"
-  redis:
-    image: "redis:alpine"
 
 This Compose file defines two services, web and redis. The web service:
 
@@ -80,8 +80,6 @@ The number should increment.
 to list local images.
 
 Listing images at this point should return redis and web.
-
-$ docker image ls
 
 You can inspect images with docker inspect <tag or id>.
 
