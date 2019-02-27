@@ -126,7 +126,7 @@ There are five possible container IDs all cycling by randomly, demonstrating the
 
 The reason both IP addresses work is that nodes in a swarm participate in an ingress routing mesh. This ensures that a service deployed at a certain port within your swarm always has that port reserved to itself, no matter what node is actually running the container. Here’s a diagram of how a routing mesh for a service called my-web published at port 8080 on a three-node swarm would look.
 
-![alt text](https://github.com/sunnyvale-academy/SNY.OSS.DCK.01.01.00/tree/master/docker_swarm/img/ingress-routing-mesh)
+![alt text](https://github.com/sunnyvale-academy/SNY.OSS.DCK.01.01.00/blob/master/docker_swarm/img/ingress-routing-mesh.png)
 
 Iterating and scaling your app
 
