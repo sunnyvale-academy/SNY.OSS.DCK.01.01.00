@@ -111,13 +111,17 @@ Just like before, run the following command to deploy the app on myvm1.
 
 NB. First of all be sure that the img in docker-compose.yml are be build
 
-`$ docker stack deploy -c docker-compose.yml getstartedlab`
+`$ docker stack deploy -c docker-compose.yml lab_swarm`
 
 And that’s it, the app is deployed on a swarm cluster!
 
 Now you can use the same docker commands you used in part 3. Only this time notice that the services (and associated containers) have been distributed between both myvm1 and myvm2.
 
-`$ docker stack ps getstartedlab`
+```
+$ docker stack ps lab_swarm
+$ docker node ls
+$ docker stack services lab_swarm
+```
 
 Accessing your cluster
 You can access your app from the IP address of either myvm1 or myvm2.
@@ -146,4 +150,4 @@ Cleanup and reboot
 Stacks and swarms
 You can tear down the stack with docker stack rm. For example:
 
-` $ docker stack rm getstartedlab`
+` $ docker stack rm lab_swarm``
