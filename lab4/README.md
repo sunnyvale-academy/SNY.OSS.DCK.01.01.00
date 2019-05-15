@@ -1,4 +1,4 @@
-# Lab Day2 step by step
+# Lab Day4 step by step
 ## Docker crash course v. 01.00
 
 > First of all, check if node and postgres are installed, if yes, change the password for postgres user
