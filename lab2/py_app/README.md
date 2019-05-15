@@ -15,9 +15,13 @@ $ vagrant up
 $ vagrant ssh
 $ cd /vagrant
 $ sudo adduser docker_lab2
-$ sudo usermode -aG docker docker_lab2
+$ sudo usermod -aG docker docker_lab2
+$ su - docker_lab2
 ```
->Create python app
+
+<!---
+Create python app
+
 
 ```
 $ mkdir py_app
@@ -27,10 +31,12 @@ $ touch requirements.txt
 $ touch app.py
 $ copy and paste code inside file
 ```
+-->
 
 > Build app and creates Docker image
 
 ```
+$ cd /vagrant/py_app
 $ docker build -t nameimage .
 $ docker image ls
 # note there are two images, our "nameimage" and python, and note the tag:latest (default)
@@ -40,13 +46,13 @@ $ docker ps -a
 
 > Run the app
 
-`$ docker run -p 4000:80 nameimage:tag`
+`$ docker run -p 4000:80 nameimage`
 
 > Share Image (nb. Docker account needed)
 
 ```
 $ docker login
-$ docker tag imagename:tag username/newname:tag
+$ docker tag nameimage username/newname
 
 # docker tag friendlyhello:1.0 michis/get_started:part1
 ```
