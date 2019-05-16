@@ -1,0 +1,45 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# README
+#
+# Getting Started:
+# 1. vagrant plugin install vagrant-hostmanager
+# 2. vagrant up
+# 3. vagrant ssh
+#
+# This should put you at the control host
+#  with access, by name, to other vms
+Vagrant.configure(2) do |config|
+  config.hostmanager.enabled = true
+  config.vm.box = "geerlingguy/centos7"
+  config.hostmanager.manage_host = false
+
+  config.vm.define "swarm_manager", primary: true do |h|
+    h.vm.network "private_network", ip: "192.168.135.10"
+    h.vm.provision "shell", path: "scripts/install_docker.sh" 
+    h.vm.hostname = "swarmmanager"
+    h.vm.provider :virtualbox do |vb|
+        vb.name = "swarm_manager"
+    end
+  end
+
+  config.vm.define "swarm_node1" do |h|
+    h.vm.network "private_network", ip: "192.168.135.101"
+    h.vm.provision :shell, path: "scripts/install_docker.sh"
+    h.vm.hostname = "swarmnode1"
+    h.vm.provider :virtualbox do |vb|
+        vb.name = "swarm_node1"
+    end
+  end
+
+  config.vm.define "swarm_node2" do |h|
+    h.vm.network "private_network", ip: "192.168.135.102"
+    h.vm.provision :shell, path: "scripts/install_docker.sh"
+    h.vm.hostname = "swarmnode2"
+    h.vm.provider :virtualbox do |vb|
+        vb.name = "swarm_node2"
+    end
+  end
+
+end
