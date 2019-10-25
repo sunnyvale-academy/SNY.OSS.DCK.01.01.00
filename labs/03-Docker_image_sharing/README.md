@@ -1,6 +1,7 @@
-# Docker image sharing
+            
+# Docker image sharing
 
-## Prerequisites
+## Prerequisites
 
 Having completed labs:
 -  **00 - Setup lab environment**
