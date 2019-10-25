@@ -41,7 +41,7 @@ friendlyhello             1.0                 776174b5910f        24 minutes ago
 python                    2.7-slim            fc113e78155c        47 hours ago        138MB
 hello-world               latest              fce289e99eb9        9 months ago        1.84kB
 ```
-Now push the image to DockerHUB
+Now push the image to DockerHUB. Before the image name, you have to put your docker account as a prefix (in this case, dennydgl1)
 
 ```console
 vagrant@docker-vm:~$ docker push dennydgl1/friendlyhello:1.0
@@ -63,7 +63,7 @@ If everyone in the class has pushed his own image, try to pull the image of the 
 vagrant@docker-vm:~$ docker run -p 4000:80 <DockerHUB account>/<Image name>:<image version>
 ```
 
-Be sure to change the placeholder <> accordingly.
+Be sure to change the placeholders \<DockerHUB account\>, \<Image name\> and \<image version\> accordingly.
 
 Try to access the Python application as you have done in the previous lab
 
