@@ -56,7 +56,7 @@ b67d19e65ef6: Waiting
 1.0: digest: sha256:fac5f4fdd96e4b35baf4ef6502c47606141eeeaad75ab84ae49c0c97457d0d26 size: 1787
 ```
 
-If everyone in the class has pushed his own image, try to pull the image of the person next to you. To do so, ask him what his the fully qualified image name (i.e. dennydgl1/friendlyhello:1.0), then type:
+If everyone in the class has pushed his own image, try to pull the image of the person next to you. To do so, ask her/him what his the fully qualified image name (i.e. dennydgl1/friendlyhello:1.0), then type:
 
 ```console
 vagrant@docker-vm:~$ docker run -p 4000:80 <DockerHUB account>/<Image name>:<image version>
