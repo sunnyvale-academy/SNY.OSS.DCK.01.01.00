@@ -25,7 +25,7 @@ https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 Login Succeeded
 ```
 
-Tag your image. Before the image name, you have to put your docker account as a prefix
+Tag your image. Before the image name, you have to put your docker account as a prefix (in this case, dennydgl1)
 
 ```console
 vagrant@docker-vm:~$ docker tag friendlyhello:1.0 dennydgl1/friendlyhello:1.0
