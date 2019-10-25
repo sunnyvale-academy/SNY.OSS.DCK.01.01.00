@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# README
+#
+# Getting Started:
+# 1. vagrant plugin install vagrant-hostmanager
+# 2. vagrant up
+# 3. vagrant ssh
+#
+# This should put you at the control host
+#  with access, by name, to other vms
+Vagrant.configure(2) do |config|
+  config.hostmanager.enabled = true
+  config.vm.box = "geerlingguy/centos7"
+  config.hostmanager.manage_host = false
+
+
+  config.vm.define "node1" do |h|
+    h.vm.network "private_network", ip: "192.168.132.101"
+    h.vm.provision :shell, path: "scripts/install_docker.sh"
+    h.vm.hostname = "node1"
+    h.vm.provider :virtualbox do |vb|
+        vb.name = "node1"
+    end
+  end
+
+  config.vm.define "node2" do |h|
+    h.vm.network "private_network", ip: "192.168.132.102"
+    h.vm.provision :shell, path: "scripts/install_docker.sh"
+    h.vm.hostname = "node2"
+    h.vm.provider :virtualbox do |vb|
+        vb.name = "node2"
+    end
+  end
+
+end

@@ -1,1 +1,0 @@
-{"nfs":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/C/Users/miche/Desktop/4","disabled":false,"type":"nfs","__vagrantfile":true,"map_uid":0,"map_gid":0,"nfs_version":3,"nfs_udp":true,"uuid":"808707068","mount_options":["vers=3","udp","nolock"]}}}
