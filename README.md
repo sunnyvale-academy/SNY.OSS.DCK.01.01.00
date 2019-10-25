@@ -4,4 +4,6 @@
 
 [01 - Check Docker installation](labs/01-Check_Docker_installation/README.md)
 
-[02 - Build your image](02-Build_your_image/README.md)
+[02 - Build your image](labs/02-Build_your_image/README.md)
+
+[03 - Docker image sharing](labs/03-Docker_image_sharing/README.md)
