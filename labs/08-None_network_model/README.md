@@ -29,13 +29,12 @@ vagrant@docker-vm:~$ docker run \
     -it \
     --net none \
     busybox \
-    /bin/ash
+    ifconfig
 Unable to find image 'busybox:latest' locally
 latest: Pulling from library/busybox
 7c9d20b9b6cd: Pull complete 
 Digest: sha256:fe301db49df08c384001ed752dff6d52b4305a73a7f608f21528048e8a08b51e
 Status: Downloaded newer image for busybox:latest
-/ # ifconfig
 lo        Link encap:Local Loopback  
           inet addr:127.0.0.1  Mask:255.0.0.0
           UP LOOPBACK RUNNING  MTU:65536  Metric:1
@@ -43,10 +42,19 @@ lo        Link encap:Local Loopback
           TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1 
           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-/ # ping 8.8.8.8
-PING 8.8.8.8 (8.8.8.8): 56 data bytes
-ping: sendto: Network is unreachable
-/ # exit
-vagrant@docker-vm:~$
 ```
 
+Test to reach internet
+
+```console
+vagrant@docker-vm:~$ docker run \
+    --rm \
+    -it \
+    --net none \
+    busybox \
+    ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+ping: sendto: Network is unreachable
+```
+
+There is only one network interface called Loopback. It is not connected to any networks.
