@@ -10,6 +10,10 @@
 
 [03 - Docker image sharing](labs/03-Docker_image_sharing/README.md)
 
+[04 - Volumes](labs/04-Volumes/README.md)
+
+[05 - Bind mounts](labs/05-Bind_mounts/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
