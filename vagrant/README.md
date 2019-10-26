@@ -39,7 +39,7 @@ $ cd <GIT_REPO_NAME>/vagrant/scripts
 $ vi .env
 ```
 
-Change the following variables into the file (GCP_SA_CREDENTIALS_FILENAME is the GCP json filename):
+Change the following variables into the file .env:
 
 ```console
 export GIT_USERNAME=
