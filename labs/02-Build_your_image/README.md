@@ -4,6 +4,15 @@
 
 Having completed lab **00 - Setup lab environment**
 
+## Connect to Sunnyvale's Ubuntu VM
+
+```console
+$ cd <GIT_REPO_NAME>/vagrant
+$ vagrant up
+$ vagrant ssh
+vagrant@docker-vm:~$ 
+```
+
 
 ## Build the image
 

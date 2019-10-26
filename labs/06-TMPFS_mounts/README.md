@@ -12,6 +12,15 @@ The typical data that you can afford to miss (in some situations) are the log fi
 
 Having completed labs **00 - Setup lab environment**
 
+## Connect to Sunnyvale's Ubuntu VM
+
+```console
+$ cd <GIT_REPO_NAME>/vagrant
+$ vagrant up
+$ vagrant ssh
+vagrant@docker-vm:~$ 
+```
+
 ## Run the container with a TMPFS-mounted volume
 
 ```console

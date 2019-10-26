@@ -6,6 +6,15 @@ We will use a bind mount to compile a Java application, even without having a JD
 
 Having completed labs **00 - Setup lab environment**
 
+## Connect to Sunnyvale's Ubuntu VM
+
+```console
+$ cd <GIT_REPO_NAME>/vagrant
+$ vagrant up
+$ vagrant ssh
+vagrant@docker-vm:~$ 
+```
+
 ## Create a container to compile the source code
 
 Here we create a container used to compile the Java source code (Main.java). 

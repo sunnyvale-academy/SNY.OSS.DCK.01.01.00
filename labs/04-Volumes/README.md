@@ -6,6 +6,15 @@ Having completed labs:
 -  **00 - Setup lab environment**
 -  **02 - Build your image**
 
+## Connect to Sunnyvale's Ubuntu VM
+
+```console
+$ cd <GIT_REPO_NAME>/vagrant
+$ vagrant up
+$ vagrant ssh
+vagrant@docker-vm:~$ 
+```
+
 ## Create a volume
 
 To create a volume type the following command

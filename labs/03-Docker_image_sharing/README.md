@@ -9,6 +9,15 @@ Having completed labs:
 
 Having a valid DockerHUB account (https://hub.docker.com)
 
+## Connect to Sunnyvale's Ubuntu VM
+
+```console
+$ cd <GIT_REPO_NAME>/vagrant
+$ vagrant up
+$ vagrant ssh
+vagrant@docker-vm:~$ 
+```
+
 # Share your Docker image
 
 First login to DockerHUB public registry
