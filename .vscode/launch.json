@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "app.Main",
+            "projectName": "source_repo_e92bb187"
+        }
+    ]
+}
