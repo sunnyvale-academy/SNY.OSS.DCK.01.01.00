@@ -20,9 +20,7 @@
 
 [08 - None network model](labs/08-None_network_model/README.md)
 
-[09 - Bridge network model](labs/07-FS_layering/README.md)
-
-[10 - Host network model](labs/07-FS_layering/README.md)
+[09 - Bridge network model](labs/09-Bridge_network_model/README.md)
 
 ## Appendices
 
