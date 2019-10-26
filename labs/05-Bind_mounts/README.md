@@ -43,6 +43,16 @@ We used a bind mount to perform some operation with the container on a directory
 
 PAY ATTENTION when using bind mounts, if you perform a bad operation within the mount point, you can affect data on your Docker Host machine.
 
+# RedOnly bind mounts
 
+To make the bind mount read-only, 
+
+```console
+vagrant@docker-vm:~$ docker run \
+    --rm \
+    --mount type=bind,source=/home/vagrant/$GIT_REPO_NAME/labs/05-Bind_mounts/app,target=/app/,readonly \
+    openjdk:7 java -cp / app.Main
+Hello from a Java app!
+```
 
 
