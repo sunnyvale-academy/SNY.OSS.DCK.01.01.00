@@ -146,3 +146,54 @@ cf0f3ca922e0        7 days ago          /bin/sh -c #(nop)  CMD ["/bin/bash"]    
 
 Notice that all the layers are identical except the top layer of the second image. All the other layers are shared between the two images, and are only stored once in /var/lib/docker/. The new layer actually doesn’t take any room at all, because it is not changing any files, but only running a command.
 
+When you start a container, a thin writable container layer is added on top of the other layers.
+
+From a terminal on your Docker host, run the following docker run commands. The strings at the end are the IDs of each container.
+
+```console
+vagrant@docker-vm:~$ docker run --rm -dit --name my_container_1 my-image:1.0 bash \
+  && docker run --rm -dit --name my_container_2 my-image:1.0 bash \
+  && docker run --rm -dit --name my_container_3 my-image:1.0 bash \
+  && docker run --rm -dit --name my_container_4 my-image:1.0 bash \
+  && docker run --rm -dit --name my_container_5 my-image:1.0 bash
+8c5e8475f2847ae5dad57aade17e2f37f1609a780336a944881a8312d4c351cc
+a017a517da7422b98f7d442fc93bc35fbe18158d991a0b979ac8d4eff9232d3c
+42c94dfa4cc22c0efa33a65c18f4e870c829f83f2a23ce56c7a87c134df18fc3
+cad7c25ccb2ac3b02c7df7482a22ce2e4316b8fe040832e8874450e16843ed04
+10f4fa2ca2e9881574259f47b84f094e07e79c0c1dc7bf3ec71fc49b09328509
+``` 
+
+Run the `docker ps` command to verify the 5 containers are running.
+
+```console
+vagrant@docker-vm:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS               NAMES
+10f4fa2ca2e9        my-image:1.0        "bash"              About a minute ago   Up About a minute                       my_container_5
+cad7c25ccb2a        my-image:1.0        "bash"              About a minute ago   Up About a minute                       my_container_4
+42c94dfa4cc2        my-image:1.0        "bash"              About a minute ago   Up About a minute                       my_container_3
+a017a517da74        my-image:1.0        "bash"              About a minute ago   Up About a minute                       my_container_2
+8c5e8475f284        my-image:1.0        "bash"              About a minute ago   Up About a minute                       my_container_1
+``` 
+
+List the contents of the local storage area.
+
+```console
+vagrant@docker-vm:~$ sudo ls -l /var/lib/docker/containers
+total 20
+drwx------ 4 root root 4096 Oct 26 21:37 10f4fa2ca2e9881574259f47b84f094e07e79c0c1dc7bf3ec71fc49b09328509
+drwx------ 4 root root 4096 Oct 26 21:37 42c94dfa4cc22c0efa33a65c18f4e870c829f83f2a23ce56c7a87c134df18fc3
+drwx------ 4 root root 4096 Oct 26 21:37 8c5e8475f2847ae5dad57aade17e2f37f1609a780336a944881a8312d4c351cc
+drwx------ 4 root root 4096 Oct 26 21:37 a017a517da7422b98f7d442fc93bc35fbe18158d991a0b979ac8d4eff9232d3c
+drwx------ 4 root root 4096 Oct 26 21:37 cad7c25ccb2ac3b02c7df7482a22ce2e4316b8fe040832e8874450e16843ed04
+``` 
+
+```console
+vagrant@docker-vm:~$ vagrant@docker-vm:~$ sudo su
+root@docker-vm:/home/vagrant# du -sh  /var/lib/docker/containers/*
+36K     /var/lib/docker/containers/10f4fa2ca2e9881574259f47b84f094e07e79c0c1dc7bf3ec71fc49b09328509
+36K     /var/lib/docker/containers/42c94dfa4cc22c0efa33a65c18f4e870c829f83f2a23ce56c7a87c134df18fc3
+36K     /var/lib/docker/containers/8c5e8475f2847ae5dad57aade17e2f37f1609a780336a944881a8312d4c351cc
+36K     /var/lib/docker/containers/a017a517da7422b98f7d442fc93bc35fbe18158d991a0b979ac8d4eff9232d3c
+36K     /var/lib/docker/containers/cad7c25ccb2ac3b02c7df7482a22ce2e4316b8fe040832e8874450e16843ed04
+``` 
+Each of these containers only takes up of space on the filesystem.
