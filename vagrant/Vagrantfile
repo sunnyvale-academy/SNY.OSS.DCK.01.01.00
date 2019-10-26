@@ -86,13 +86,13 @@ Vagrant.configure("2") do |config|
   end
 
 
-  config.vm.define "swarmmanager" do |h|
+  config.vm.define "swarmmanager", primary: true do |h|
     h.vm.network "private_network", ip: "192.168.135.100"
     h.vm.provision "shell", privileged: false, path: "scripts/install_utilities.sh"
     h.vm.provision "shell", path: "scripts/dos2unix.sh"
     h.vm.provision "shell", path: "scripts/modify_bash_profile.sh"
     h.vm.provision "shell", privileged: false, path: "scripts/clone_labs_repo.sh"
-    h.vm.provision "shell", path: "scripts/install_docker.sh" 
+    h.vm.provision "shell", privileged: false, path: "scripts/install_docker.sh"
     h.vm.hostname = "swarmmanager"
     h.vm.provider :virtualbox do |vb|
         vb.name = "swarmmanager"
@@ -105,7 +105,7 @@ Vagrant.configure("2") do |config|
     h.vm.provision "shell", path: "scripts/dos2unix.sh"
     h.vm.provision "shell", path: "scripts/modify_bash_profile.sh"
     h.vm.provision "shell", privileged: false, path: "scripts/clone_labs_repo.sh"
-    h.vm.provision :shell, path: "scripts/install_docker.sh"
+    h.vm.provision "shell", privileged: false, path: "scripts/install_docker.sh"
     h.vm.hostname = "swarmnode1"
     h.vm.provider :virtualbox do |vb|
         vb.name = "swarmnode1"
@@ -114,7 +114,11 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "swarmnode2" do |h|
     h.vm.network "private_network", ip: "192.168.135.102"
-    h.vm.provision :shell, path: "scripts/install_docker.sh"
+    h.vm.provision "shell", privileged: false, path: "scripts/install_utilities.sh"
+    h.vm.provision "shell", path: "scripts/dos2unix.sh"
+    h.vm.provision "shell", path: "scripts/modify_bash_profile.sh"
+    h.vm.provision "shell", privileged: false, path: "scripts/clone_labs_repo.sh"
+    h.vm.provision "shell", privileged: false, path: "scripts/install_docker.sh"
     h.vm.hostname = "swarmnode2"
     h.vm.provider :virtualbox do |vb|
         vb.name = "swarmnode2"
