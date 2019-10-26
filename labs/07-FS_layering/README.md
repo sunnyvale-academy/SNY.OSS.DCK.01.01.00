@@ -143,3 +143,6 @@ cf0f3ca922e0        7 days ago          /bin/sh -c #(nop)  CMD ["/bin/bash"]    
 <missing>           7 days ago          /bin/sh -c [ -z "$(apt-get indextargets)" ]     987kB               
 <missing>           7 days ago          /bin/sh -c #(nop) ADD file:d13b09e8b3cc98bf0…   63.2MB     
 ```
+
+Notice that all the layers are identical except the top layer of the second image. All the other layers are shared between the two images, and are only stored once in /var/lib/docker/. The new layer actually doesn’t take any room at all, because it is not changing any files, but only running a command.
+
