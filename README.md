@@ -14,6 +14,8 @@
 
 [05 - Bind mounts](labs/05-Bind_mounts/README.md)
 
+[06 - TMPFS mounts](labs/06-TMPFS_mounts/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)

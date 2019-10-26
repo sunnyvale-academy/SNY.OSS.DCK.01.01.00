@@ -6,7 +6,7 @@ We will use a bind mount to compile a Java application, even without having a JD
 
 Having completed labs **00 - Setup lab environment**
 
-## Creating a container to compile the source code
+## Create a container to compile the source code
 
 Here we create a container used to compile the Java source code (Main.java). 
 Note the `-v` flag used to mount a host's directory with the source code into the container.
@@ -25,7 +25,7 @@ vagrant@docker-vm:~$ ls -l /home/vagrant/$GIT_REPO_NAME/labs/05-Bind_mounts/app 
 -rw-r--r-- 1 vagrant vagrant 428 Oct 26 13:06 Main.class
 ```
 
-## Creating a container to run the byte code
+## Create a container to run the byte code
 
 We can also run the Java class using the same image, but with a different container
 
@@ -54,5 +54,6 @@ vagrant@docker-vm:~$ docker run \
     openjdk:7 java -cp / app.Main
 Hello from a Java app!
 ```
+
 
 
