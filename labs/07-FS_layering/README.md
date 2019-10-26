@@ -197,3 +197,15 @@ root@docker-vm:/home/vagrant# du -sh  /var/lib/docker/containers/*
 36K     /var/lib/docker/containers/cad7c25ccb2ac3b02c7df7482a22ce2e4316b8fe040832e8874450e16843ed04
 ``` 
 Each of these containers only takes up of space on the filesystem.
+
+Stop all containers
+
+```console
+vagrant@docker-vm:~$ docker stop $(docker ps -q)
+10f4fa2ca2e9
+cad7c25ccb2a
+42c94dfa4cc2
+a017a517da74
+8c5e8475f284
+``` 
+
