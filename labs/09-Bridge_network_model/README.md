@@ -224,4 +224,9 @@ PING 172.17.0.2 (172.17.0.2): 56 data bytes
 
 Now container_3 is unable to ping container_1 on the default bridge network.
 
+Stop the running container.
 
+```console
+vagrant@docker-vm:~$ docker stop $(docker ps -q)
+2b12864becc0
+```

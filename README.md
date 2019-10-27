@@ -22,6 +22,8 @@
 
 [09 - Bridge network model](labs/09-Bridge_network_model/README.md)
 
+[10 - Host network model](labs/10-Host_network_model/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
