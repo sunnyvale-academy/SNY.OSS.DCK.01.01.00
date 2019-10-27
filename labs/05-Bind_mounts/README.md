@@ -4,7 +4,7 @@ We will use a bind mount to compile a Java application, even without having a JD
 
 ## Prerequisites
 
-Having completed labs **00 - Setup lab environment**
+Having completed lab **00 - Setup lab environment**
 
 ## Connect to Sunnyvale's Ubuntu VM
 

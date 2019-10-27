@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Having completed labs **00 - Setup lab environment**
+Having completed lab **00 - Setup lab environment**
 
 ## Prepare the Sunnyvale's **swarmmanager** Ubuntu VM
 

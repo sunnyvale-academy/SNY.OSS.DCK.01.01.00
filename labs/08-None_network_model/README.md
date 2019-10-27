@@ -9,7 +9,7 @@ None network model:
 
 ## Prerequisites
 
-Having completed labs **00 - Setup lab environment**
+Having completed lab **00 - Setup lab environment**
 
 ## Connect to Sunnyvale's Ubuntu VM
 
