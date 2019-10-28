@@ -33,6 +33,9 @@ vagrant@docker-vm:~$ docker run \
     portainer/portainer
 d8f7afd1a68452bbece3eacd788a387094d174ce4cde6ad529b4e0371909453e
 ``` 
+
+## Access to Portainer
+
 If you point your browser to http://192.168.135.10:9000 you should see a screen asking you to create an initial password. having done this, your should enter into the Portainer Home Screen.
 
 ![Portainer Home Screen](img/homescreen.png)
