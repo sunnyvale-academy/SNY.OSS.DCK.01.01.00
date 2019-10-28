@@ -24,6 +24,14 @@
 
 [10 - Host network model](labs/10-Host_network_model/README.md)
 
+[11 - Docker Swarm cluster](labs/11-Docker-Swarm_cluster/README.md)
+
+[12 - Overlay network with Swarm](labs/12-Overlay_network_with_Swarm/README.md)
+
+[13 - Docker Compose](labs/13-Docker_Compose/README.md)
+
+[14 - Portainer](labs/14-Portainer/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
