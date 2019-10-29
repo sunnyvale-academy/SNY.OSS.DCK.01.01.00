@@ -34,7 +34,6 @@ vagrant@docker-vm:~$ docker run \
     -v /home/vagrant/$GIT_REPO_NAME/labs/16-CPU_limits/app:/app/ \
     openjdk:11.0-jdk \
     /usr/local/openjdk-11/bin/java \
-    -XX:MaxRAMFraction=1 \
     /app/MaxProcessors.java
 Max Processors: 2
 ``` 
@@ -48,7 +47,6 @@ vagrant@docker-vm:~$ docker run \
     -v /home/vagrant/$GIT_REPO_NAME/labs/16-CPU_limits/app:/app/ \
     openjdk:11.0-jdk \
     /usr/local/openjdk-11/bin/java \
-    -XX:MaxRAMFraction=1 \
     /app/MaxProcessors.java
 Max Processors: 1
 ``` 
