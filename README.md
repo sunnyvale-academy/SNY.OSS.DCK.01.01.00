@@ -32,6 +32,10 @@
 
 [14 - Portainer](labs/14-Portainer/README.md)
 
+[15 - Memory limits](labs/15-Memory_limits/README.md)
+
+[16 - CPU limits](labs/16-CPU_limits/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
