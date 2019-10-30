@@ -25,7 +25,7 @@ Recreating 13dockercompose_db_1 ... done
 Recreating 13dockercompose_wordpress_1 ... done
 ```
 
-If you point your browser to http://http://192.168.135.10:8000/ you should see the WordPress installation page.
+If you point your browser to http://192.168.135.10:8000/ you should see the WordPress installation page.
 
 Go ahead installing WordPress, you will see that MySQL container has been created too.
 
