@@ -27,9 +27,10 @@ We run an **nginx** container with a host network, notice that we did not map an
 ```console
 vagrant@docker-vm:~$ docker run \
     --rm \
+    -d \
     -it \
     --net host \
-    nginx \
+    nginx 
 Unable to find image 'nginx:latest' locally
 latest: Pulling from library/nginx
 8d691f585fa8: Pull complete 

@@ -71,8 +71,7 @@ Connect to the **swarmmanager** VM
 $ cd <GIT_REPO_NAME>/vagrant
 $ vagrant up
 $ vagrant ssh swarmmanager
-vagrant@swarmmanager:~$ nbg
-u
+vagrant@swarmmanager:~$ 
 ```
 
 Verify the cluster status
@@ -104,7 +103,8 @@ verify: Service converged
 ```
 
 ```console
-vagrant@swarmmanager:~$ ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+vagrant@swarmmanager:~$ docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
 ti0272mum77o        web                 replicated          5/5                 nginx:latest        *:4000->80/tcp
 ```
 
@@ -139,6 +139,13 @@ Commercial support is available at
 </body>
 </html>
 ```
+
+
+```console
+vagrant@swarmmanager:~$ docker service scale web=50
+verify: Service converged 
+```
+
 
 Finally, stop/delete the service to preserve computational resources.
 
