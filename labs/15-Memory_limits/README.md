@@ -82,7 +82,7 @@ vagrant@docker-vm:~$ docker run \
 Max Memory: 958
 ``` 
 
-Run a container with `--memory 500m` flag (1/4 of the host's memory)
+Run a container with `--memory 500m` flag (1/2 of the host's memory)
 
 ```console
 vagrant@docker-vm:~$ docker run \
