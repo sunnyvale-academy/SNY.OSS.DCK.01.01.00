@@ -66,7 +66,7 @@ Get the Docker Host (Ubuntu VM in this case) total memory available:
 
 ```console
 vagrant@docker-vm:~$ cat /proc/meminfo | grep MemTotal
-MemTotal:        2045912 kB
+MemTotal:        1015768 kB
 ```
 
 Run a container to test the Max Memory seen by a Java application
@@ -79,7 +79,7 @@ vagrant@docker-vm:~$ docker run \
     /usr/local/openjdk-11/bin/java \
     -XX:MaxRAMFraction=1 \
     /app/MaxMemory.java
-Max Memory: 1998
+Max Memory: 958
 ``` 
 
 Run a container with `--memory 500m` flag (1/4 of the host's memory)
