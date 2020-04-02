@@ -41,14 +41,32 @@ vagrant@docker-vm:~$ sudo perl -p -i  -e "s/GRUB_CMDLINE_LINUX_DEFAULT=\"console
 Apply the change and reboot 
 
 ```console
-vagrant@docker-vm:~$ sudo update-grub && sudo reboot
+vagrant@docker-vm:~$ sudo update-grub 
 Generating grub configuration file ...
 Found linux image: /boot/vmlinuz-4.4.0-146-generic
 Found initrd image: /boot/initrd.img-4.4.0-146-generic
 done
-Connection to 127.0.0.1 closed by remote host.
-Connection to 127.0.0.1 closed.
 ``` 
+
+Now exit from the docker-vm machine 
+
+```console
+vagrant@docker-vm:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+```
+and restart it
+
+```console
+$ vagrant halt docker-vm
+...
+```
+
+
+```console
+$ vagrant up docker-vm
+...
+```
 
 Test with docker info again
 
