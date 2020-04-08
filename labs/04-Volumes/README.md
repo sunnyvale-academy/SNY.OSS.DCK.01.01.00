@@ -69,9 +69,9 @@ Now start a new **friendlyhello:1.0** container, mounting the volume in the path
 
 ```console
 vagrant@docker-vm:~$ docker run -d \
-	--name devtest \
-	--mount source=my-vol,target=/app \
-	friendlyhello:1.0
+--name devtest \
+--mount source=my-vol,target=/app \
+friendlyhello:1.0
 a52c0d80c11dc8d62f6abfcdb896714aaa05417a4163ce0e210bbcdd22c8657b
 ```
 
