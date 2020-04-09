@@ -189,7 +189,7 @@ We can see container_3 has one extra network interface which is exactly within t
 Search for the container_1 IP address
 
 ```console
-docker inspect container_1 | grep -i IPAddress\" | sed -e "s/ //g" | uniq
+vagrant@docker-vm:~$ docker inspect container_1 | grep -i IPAddress\" | sed -e "s/ //g" | uniq
 "IPAddress":"172.17.0.2",
 ```
 
