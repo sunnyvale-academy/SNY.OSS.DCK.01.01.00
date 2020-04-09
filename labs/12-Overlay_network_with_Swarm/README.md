@@ -93,7 +93,7 @@ vagrant@swarmnode2:~$
 Let's try to ping busybox1 IP address (in my case 172.19.0.34) by a container on swarmnode2.
 
 ```console
-vagrant@swarmnode1:~$ docker run \
+vagrant@swarmnode2:~$ docker run \
     --rm \
     --name busybox2 \
     --network my-overlay-network \
