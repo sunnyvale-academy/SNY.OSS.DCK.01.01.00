@@ -42,4 +42,5 @@ gpg --no-default-keyring --keyring ./adoptopenjdk-keyring.gpg --export --output 
 rm adoptopenjdk-keyring.gpg
 sudo mv adoptopenjdk-archive-keyring.gpg /usr/share/keyrings 
 echo "deb [signed-by=/usr/share/keyrings/adoptopenjdk-archive-keyring.gpg] https://adoptopenjdk.jfrog.io/adoptopenjdk/deb xenial main" | sudo tee /etc/apt/sources.list.d/adoptopenjdk.list
+sudo apt-get update
 sudo apt-get install -y adoptopenjdk-11-hotspot

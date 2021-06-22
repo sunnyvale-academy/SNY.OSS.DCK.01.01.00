@@ -36,6 +36,8 @@
 
 [16 - CPU limits](labs/16-CPU_limits/README.md)
 
+[17 - Java Docker awareness](labs/17-Java_Docker_awareness/README.md)
+
 ## Appendices
 
 [A - Sync a local copy of forked repo](appendices/A-Sync_copy_of_forked_repo/README.md)
