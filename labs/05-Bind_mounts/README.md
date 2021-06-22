@@ -23,14 +23,14 @@ Note the `-v` flag used to mount a host's directory with the source code into th
 ```console
 vagrant@docker-vm:~$ docker run \
     --rm \
-    -v /home/vagrant/$GIT_REPO_NAME/labs/05-Bind_mounts/app:/app/ \
+    -v $(pwd)/app:/app/ \
     openjdk:7 javac -cp /app /app/Main.java
 ```
 
 Now, if you list the host's directory content, you will see the Java compiled bytecode.
 
 ```console
-vagrant@docker-vm:~$ ls -l /home/vagrant/$GIT_REPO_NAME/labs/05-Bind_mounts/app | grep class
+vagrant@docker-vm:~$ ls -l $(pwd)/app | grep class
 -rw-r--r-- 1 vagrant vagrant 428 Oct 26 13:06 Main.class
 ```
 
@@ -41,7 +41,7 @@ We can also run the Java class using the same image, but with a different contai
 ```console
 vagrant@docker-vm:~$ docker run \
     --rm \
-    -v /home/vagrant/$GIT_REPO_NAME/labs/05-Bind_mounts/app:/app/ \
+    -v $(pwd)/app:/app/ \
     openjdk:7 java -cp / app.Main
 Hello from a Java app!
 ```
@@ -59,7 +59,7 @@ To make the bind mount read-only,
 ```console
 vagrant@docker-vm:~$ docker run \
     --rm \
-    --mount type=bind,source=/home/vagrant/$GIT_REPO_NAME/labs/05-Bind_mounts/app,target=/app/,readonly \
+    --mount type=bind,source=$(pwd)/app,target=/app/,readonly \
     openjdk:7 java -cp / app.Main
 Hello from a Java app!
 ```
