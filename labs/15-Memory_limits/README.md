@@ -92,7 +92,7 @@ Run a container to test the Max Memory seen by a Java application
 ```console
 vagrant@docker-vm:~$ docker run \
     --rm \
-    -v /home/vagrant/$GIT_REPO_NAME/labs/15-Memory_limits/app:/app/ \
+    -v $(pwd)/app:/app/ \
     openjdk:11.0-jdk \
     /usr/local/openjdk-11/bin/java \
     -XX:MaxRAMFraction=1 \
@@ -106,7 +106,7 @@ Run a container with `--memory 500m` flag (1/2 of the host's memory)
 vagrant@docker-vm:~$ docker run \
     --rm \
     --memory 500m \
-    -v /home/vagrant/$GIT_REPO_NAME/labs/15-Memory_limits/app:/app/ \
+    -v $(pwd)/app:/app/ \
     openjdk:11.0-jdk \
     /usr/local/openjdk-11/bin/java \
     -XX:MaxRAMFraction=1 \
