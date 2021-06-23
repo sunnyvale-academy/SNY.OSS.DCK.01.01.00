@@ -35,7 +35,7 @@ WARNING: No swap limit support
 Edit file **/etc/default/grub.d/50-cloudimg-settings.cfg** to add **cgroup_enable=memory swapaccount=1** flags. This will enable Linux kernel to support memory limits imposed by Docker.
 
 ```console
-vagrant@docker-vm:~$ sudo perl -p -i  -e "s/GRUB_CMDLINE_LINUX_DEFAULT=\"console=tty1 console=ttyS0\"/GRUB_CMDLINE_LINUX_DEFAULT=\"console=tty1 console=ttyS0 cgroup_enable=memory swapaccount=1\"/g" /etc/default/grub.d/50-cloudimg-settings.cfg
+vagrant@docker-vm:~$ echo GRUB_CMDLINE_LINUX_DEFAULT=\"console=tty1 console=ttyS0 cgroup_enable=memory swapaccount=1\" | sudo tee  /etc/default/grub.d/50-cloudimg-settings.cfg
 ``` 
 
 Apply the change and reboot 
