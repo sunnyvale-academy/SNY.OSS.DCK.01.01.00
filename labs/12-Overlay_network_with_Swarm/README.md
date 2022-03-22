@@ -40,7 +40,7 @@ vagrant@swarmmanager:~$ docker network create \
 798z953vwqkb3vmk0e5dr1swo
 ```
 
-Using the `--attachable` flag we create a network that can be used by standalone containers and Swarm services. Without it, only Swarm services would be using this network.
+Using the `--attachable` flag we create a network that can be used by standalone containers and Swarm services. Without it, only Swarm services would be using this network.
 
 Check the new network
 
